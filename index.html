@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datalist, Details, Modal</title>
+    <!--
+        The tailwind CDN is designed for development purposes only, and is not the best choice for production.
+        Read more here: https://tailwindcss.com/docs/installation 
+    -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- example for dark theme styling when using tailwind cdn -->
+    <style>
+        .dark .dark\:text-white {
+            color: #fff;
+        }
+
+        .dark .dark\:bg-gray-800 {
+            background-color: #181819;
+        }
+
+        dialog {           
+            border: 1px solid silver;
+            border-radius: 10px;            
+            max-width: 400px;
+        }
+        
+    </style>
+</head>
+
+<body class="dark:text-white">
+
+    <div class="max-w-[360px] mt-4 mx-auto pb-10">
+        <div class="text-2xl py-6 text-center">Usefull HTML elements</div>
+        <b>Input and datalist</b>        
+        <input list="techs" class="w-full border border-gray-300 py-2 px-4 rounded-md dark:bg-gray-800 dark:text-white"/>
+        <datalist id="techs">
+            <option value="HTML"></option>
+            <option value="CSS"></option>
+            <option value="JavaScript"></option>
+        </datalist>
+        <div class="text-xs text-gray-400">click to see the datalist dropdown</div>
+        <br />       
+        <b>Details</b>
+        <hr />
+        <details>
+            <summary>More...</summary>
+            <div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae sunt adipisci voluptate blanditiis magnam
+                ut sint
+                dolorum neque earum totam debitis voluptatem id cum, architecto unde perspiciatis sit. Nam, incidunt.
+            </div>
+        </details>
+        <br />
+        <br />
+        <b>Modal window</b><br />
+        <hr />
+
+        <button id="show">Show modal</button>
+
+        <dialog>
+            <div class="p-8 dark:bg-gray-800 dark:text-white">
+                <h2 class="text-2xl">My Dialog</h2>
+                <div class="pt-2 pb-4">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat earum nobis itaque? Assumenda impedit
+                    magnam
+                    doloremque enim ullam. Deserunt veniam quo cumque nemo? Qui aut repellendus cumque distinctio, totam
+                    rerum.
+                </div>
+                <div class=""><button id="hide" class="bg-gray-400 text-white rounded-md py-2 px-6">Close</button></div>
+            </div>
+        </dialog>
+
+        <script>
+            const showButton = document.querySelector('#show')
+            const hideButton = document.querySelector('#hide')
+            const modal = document.querySelector('dialog')
+            showButton.onclick = () => {
+                modal.showModal()
+            }
+            hideButton.onclick = () => {
+                modal.close()
+            }
+        </script>
+
+    </div>
+
+    <!-- special scripts for integration in MTW gallery - must be placed at the bottom of the HTML after your code -->
+    <script>
+        // custom config for the MTW app 
+        const mtwAppConfig = {
+            border: false // app border in the MTW page                    
+        }
+    </script>
+    <script src="https://morethanwallet.com/appstore/index.js"></script>
+</body>
+
+</html>
