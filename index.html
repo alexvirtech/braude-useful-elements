@@ -20,6 +20,10 @@
             background-color: #181819;
         }
 
+        .light .light\:text-black {
+            color: #000;
+        }
+
         dialog {           
             border: 1px solid silver;
             border-radius: 10px;            
@@ -29,10 +33,10 @@
     </style>
 </head>
 
-<body class="dark:text-white">
+<body class="dark:text-white light:text-black">
 
     <div class="max-w-[360px] mt-4 mx-auto pb-10">
-        <div class="text-2xl py-6 text-center">Usefull HTML elements</div>
+        <div class="text-2xl py-6 text-center">Useful HTML elements</div>
         <b>Input and datalist</b>        
         <input list="techs" class="w-full border border-gray-300 py-2 px-4 rounded-md dark:bg-gray-800 dark:text-white"/>
         <datalist id="techs">
